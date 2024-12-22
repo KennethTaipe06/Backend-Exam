@@ -1,0 +1,1 @@
+docker run -it --rm -d -p 5000:5000 --name web byvoxel/flaskapi:latest
