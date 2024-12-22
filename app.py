@@ -3,9 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 from flasgger import Swagger
 from datetime import datetime
 
+from flask import Flask
+from flask_cors import CORS
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://admin:admin123@98.82.14.185:3306/usersdb'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config.from_object('config.Config')
 
 db = SQLAlchemy(app)
 swagger = Swagger(app)
